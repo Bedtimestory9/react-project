@@ -1,0 +1,85 @@
+@use '../fonts';
+@use '../size' as s;
+
+$bar-height: 40px;
+$widescreen-breakpoint: 1300px;
+$mobile-breakpoint: 640px;
+$easeInOutBack: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+$link-width: 120px;
+
+nav {
+  font-family: "Trueno-Semibold";
+  top: 0;
+  width: 100%;
+  position: fixed;
+  font-size: 20px;
+  z-index: 99;
+}
+
+.top-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: $bar-height;
+}
+
+.wrapper {
+  display: flex;
+  width: s.$main-display;
+  height: $bar-height;
+  line-height: $bar-height;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.links-block {
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 0;
+}
+
+.main-links {
+  width: $link-width;
+  list-style-type: none;
+  text-align: center;
+
+  &:hover .sub-links {
+    visibility: visible;
+  }
+
+  &:hover ~ .dropdown {
+    visibility: visible;
+  }
+
+  /* for some reasons it has to use :link */
+  :link {       
+    text-decoration: none;
+  }
+}
+
+.sub-links {
+  word-break: keep-all;
+  width: $link-width;
+  flex-direction: column;
+  padding: 0;
+  position: absolute;
+  visibility: hidden;
+  list-style-type: none;
+  z-index: 99;
+}
+
+.dropdown {
+  justify-content: left;
+  position: absolute;
+  visibility: hidden;
+  width: 640px;
+  height: 300px;
+  top: $bar-height;
+  margin-top: 2px;
+}
+

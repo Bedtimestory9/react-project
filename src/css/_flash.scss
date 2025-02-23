@@ -1,0 +1,42 @@
+@use 'size' as s;
+@use 'color' as c;
+
+@mixin flash-shadow($color) {
+  box-shadow: inset 0 -1em 1em rgba($color,0.1),
+             0 0  0 1px rgb(190, 190, 190),
+             0.3em 0.3em 0.5em rgba($color,0.3);
+}
+
+.flash-container {
+  position: fixed;
+  top: s.$bar-pads + 0.4rem;
+  right: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  width: 11rem;
+  font-family: "Trueno-Light";
+}
+
+.info-style {
+  color: c.$lb3;
+  @include flash-shadow($color: c.$lb3)
+}
+
+.error-style {
+  color: c.$sr2;
+  @include flash-shadow($color: c.$sr2)
+}
+
+.flash-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1.5em;
+  height: 1.5em;
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+

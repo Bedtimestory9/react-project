@@ -1,0 +1,82 @@
+@use '../size' as s;
+@use '../color' as c;
+
+/* TABLE */
+
+.table-div{
+  width: s.$main-display;
+  font-size: 1rem;
+  margin: auto;
+  margin-top: 1rem;
+}
+
+thead {
+  background-color: c.$dg2;
+  padding-right: 5px;
+  color: c.$lg1;
+}
+
+td {
+  text-align: left;
+  padding: 10px 30px 10px 6px;
+}
+
+th {
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: c.$lb1bg;
+}
+
+tr:nth-child(odd) {
+}
+
+/* BUTTON */
+/* From Uiverse.io by virus231 */ 
+@mixin button($gradient1, $gradiant2, $gradient3, $gradient4, $shadow, $text-color) {
+  background: linear-gradient(140.14deg, $gradient1 15.05%, $gradiant2 114.99%)
+      padding-box,
+    linear-gradient(142.51deg, $gradient3 8.65%, $gradient4 88.82%) border-box;
+  border-radius: 7px;
+  border: 2px solid transparent;
+
+  text-shadow: 1px 1px 1px #00000040;
+  box-shadow: 2px 2px 3px 0px $shadow;
+
+  padding: 0.5em 0.5em;
+  line-height: 1em;
+  cursor: pointer;
+  transition: all 0.3s;
+  color: $text-color;
+  font-weight: 500;
+
+  &:hover {
+    box-shadow: none;
+    opacity: 80%;
+  }
+}
+.button-standard {
+  @include button($gradient1: c.$lb2, $gradiant2: c.$db1, $gradient3: c.$lb1, $gradient4: c.$db1, $shadow: c.$lb180, $text-color: white)
+}
+
+/* HEADER AND FORM */
+@mixin centering-top {
+  width: s.$main-display;
+  margin: auto;
+  margin-top: 1em;
+}
+
+.global-form {
+  @include centering-top;
+  padding: 1em;
+}
+
+.error-msg {
+  color: c.$sr2;
+}
+
+.center-div {
+  @include centering-top;
+}
+

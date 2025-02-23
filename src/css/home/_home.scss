@@ -1,0 +1,16 @@
+.home-banner {
+  display: flex;
+  justify-content: center;
+}
+
+.home-container {
+  background-image: url(/images/banner.png);
+  background-size: cover;
+  width: 100vw;
+  height: 16rem;
+  margin-bottom: 1rem;
+
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-end;
+}
