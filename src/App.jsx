@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import './css/app.scss'
 
+
 function App() {
+  const [techName, setTechName] = useState("My Stacks")
+
   const handleMouseOver = (e) => {
     switch (e.target.id) {
       case "react":
@@ -30,8 +33,6 @@ function App() {
     }
   }
 
-  const [techName, setTechName] = useState("My Stacks")
-
   return (
     <>
       <div className='bg-light'>
@@ -40,26 +41,26 @@ function App() {
         </div>
         <h1 className='title-div my-stacks'>{techName}</h1>
         <div className="title-div stacks-content">
-          <a id='react' href="https://react.dev" className='global-card tech-card global-frosted' target="_blank" onMouseOver={handleMouseOver}>
-            <i class="devicon-react-original colored"></i>
+          <a id='react' href="https://react.dev" className='global-card tech-card global-frosted' target="_blank" >
+            <i id='react' class="devicon-react-original colored" onMouseOver={handleMouseOver}></i>
           </a>
-          <a id='vue' href='https://vuejs.org/' className='global-card tech-card global-frosted' target='_blank' onMouseOver={handleMouseOver}>
-            <i class="devicon-vuejs-plain colored"></i>
+          <a href='https://vuejs.org/' className='global-card tech-card global-frosted' target='_blank' >
+            <i id='vue' class="devicon-vuejs-plain colored" onMouseOver={handleMouseOver}></i>
           </a>
-          <a id='javascript' href='https://developer.mozilla.org/en-US/docs/Web/JavaScript' className='global-card tech-card global-frosted' target='_blank' onMouseOver={handleMouseOver}>
-            <i class="devicon-javascript-plain colored"></i>
+          <a href='https://developer.mozilla.org/en-US/docs/Web/JavaScript' className='global-card tech-card global-frosted' target='_blank' >
+            <i id='javascript' class="devicon-javascript-plain colored" onMouseOver={handleMouseOver}></i>
           </a>
-          <a id='java' href='https://www.java.com/en/' className='global-card tech-card global-frosted' target='_blank' onMouseOver={handleMouseOver}>
-            <i class="devicon-java-plain colored"></i>
+          <a href='https://www.java.com/en/' className='global-card tech-card global-frosted' target='_blank' >
+            <i id='java' class="devicon-java-plain colored" onMouseOver={handleMouseOver}></i>
           </a>
-          <a id='elixir' href='https://elixir-lang.org/' className='global-card tech-card global-frosted' target='_blank' onMouseOver={handleMouseOver}>
-            <i class="devicon-elixir-plain colored"></i>
+          <a href='https://elixir-lang.org/' className='global-card tech-card global-frosted' target='_blank' >
+            <i id='elixir' class="devicon-elixir-plain colored" onMouseOver={handleMouseOver}></i>
           </a>
-          <a id='python' href='https://www.python.org/' className='global-card tech-card global-frosted' target='_blank' onMouseOver={handleMouseOver}>
-            <i class="devicon-python-plain colored"></i>
+          <a href='https://www.python.org/' className='global-card tech-card global-frosted' target='_blank'>
+            <i id='python' class="devicon-python-plain colored" onMouseOver={handleMouseOver}></i>
           </a>
-          <a id='c++' href='https://isocpp.org/' className='global-card tech-card global-frosted' target='_blank' onMouseOver={handleMouseOver}>
-            <i class="devicon-cplusplus-plain colored"></i>
+          <a href='https://isocpp.org/' className='global-card tech-card global-frosted' target='_blank' >
+            <i id='c++' class="devicon-cplusplus-plain colored" onMouseOver={handleMouseOver}></i>
           </a>
         </div>
         <p className="title-div note global-frosted">
